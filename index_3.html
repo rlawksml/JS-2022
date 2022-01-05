@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./css/test_3.css">
+  <!-- js -->
+  <script src="/index3.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 
+  에스프레소 메뉴에 새로운 메뉴를 확인 버튼 또는 엔터키 입력으로 추가한다.
+  
+  메뉴가 추가되고 나면, input은 빈 값으로 초기화한다.
+  
+  사용자 입력값이 빈 값이라면 추가되지 않는다.
+  
+  메뉴의 수정 버튼을 눌러 메뉴 이름 수정할 수 있다.
+  
+  메뉴 수정시 브라우저에서 제공하는 prompt 인터페이스를 활용한다.
+  
+  메뉴 삭제 버튼을 이용하여 메뉴 삭제할 수 있다.
+  
+  메뉴 삭제시 브라우저에서 제공하는 confirm 인터페이스를 활용한다.
+  
+  총 메뉴 갯수를 count하여 상단에 보여준다.
+ -->
+
+  <div class="container">
+
+    <div class="content-wrap">
+      <div class="whole-menu-title-ct">
+        <p class="whole-menu-title-ct__emoji">&#10024;</p>
+        <h3 class="whole-menu-title-ct__txt">Manage</h3>
+      </div>
+
+      <div class="menu-select-ct">
+        <button class="menu-select-ct__item">&#127771; Espresso</button>
+        <button class="menu-select-ct__item">&#127772; Frappuccino</button>
+        <button class="menu-select-ct__item">&#127773; Blended</button>
+        <button class="menu-select-ct__item">&#127774; Teavana</button>
+        <button class="menu-select-ct__item">&#127775; Dessert</button>
+      </div>
+
+      <div class="menu-managing-ct">
+        <div class="menu-managing-titleBox">
+          <p class="menu-managing-titleBox__emoji">&#128181;</p>
+          <h2 class="menu-managing-titleBox__txt">Espresso Management</h2>
+          <span id="menu-count"class="menu-managing-titleBox__menuCount">총 0개</span>
+        </div>
+
+        <div class="menu-mananging-inputBox">
+          <input id="newMenu-input" class="menu-mananging-inputBox__input" type="text" placeholder="Input menu here">
+          <button id="input-btn"class="menu-mananging-inputBox__okBtn">Confirm</button>
+        </div>
+
+        <div class='menu-list-ct'>
+          <ul id="espresso-menu-list" class="menu-list">
+            <li class="menu-list__item">
+              <span class="menu-list__item__name">에스프레소</span>
+              <button type="button" class="menu-list__item__okBtn">
+                수정
+              </button>
+              <button type="button" class="menu-list__item__cancleBtn">
+                삭제
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

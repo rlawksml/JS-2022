@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: lightgray;
+}
+
+body {
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 80%;
+}
+
+.title-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.menu-container {
+  margin-bottom: 35px;
+}
+
+.menu-container .menu-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu-container .menu-items-item {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+.menu-container .menu-items-item:hover {
+  opacity: 0.5;
+}
+
+.menu-container .menu-items-item-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.todo-list-container {
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  width: 100%;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  padding: 30px;
+}
+
+.todo-list-container-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-list-container-top-number-text {
+  margin-left: auto;
+}
+
+.todo-list-container .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.todo-list-container .input-container input {
+  background-color: #c1e0ff;
+  border-radius: 50px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+}
+
+.todo-list-container .input-container input::-webkit-input-placeholder {
+  color: white;
+  font-size: 12px;
+}
+
+.todo-list-container .input-container input:-ms-input-placeholder {
+  color: white;
+  font-size: 12px;
+}
+
+.todo-list-container .input-container input::-ms-input-placeholder {
+  color: white;
+  font-size: 12px;
+}
+
+.todo-list-container .input-container input::placeholder {
+  color: white;
+  font-size: 12px;
+}
+
+.todo-list-container .input-container button {
+  background-color: #fff;
+  color: dodgerblue;
+  font-weight: bold;
+  border: 2px solid lightblue;
+  border-radius: 50px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.todo-list.active {
+  display: block;
+}
+
+.todo-list {
+  display: none;
+  padding: 0;
+}
+
+.todo-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.todo-list__item__chk {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3%;
+          flex: 0 0 3%;
+  height: 100%;
+}
+
+.todo-list__item__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 94%;
+          flex: 0 0 94%;
+  width: 80%;
+  height: 100%;
+  text-align: left;
+  padding-left: 10px;
+  word-wrap: break-word;
+}
+
+.todo-list__item__text--input {
+  display: none;
+}
+
+.todo-list__item__btn-x {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3%;
+          flex: 0 0 3%;
+  background-color: #fff;
+  border: none;
+  color: #dcdcdc;
+  cursor: pointer;
+}
+
+.todo-list__item.item-wraper {
+  padding: 5px 10px;
+}
+
+.todo-list__item.editing .todo-list__item__text {
+  display: none;
+}
+
+.todo-list__item.editing .todo-list__item__text--input.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 90%;
+          flex: 0 1 90%;
+  margin: 0 4%;
+}
+
+.todo-list__item.completed .todo-list__item__text {
+  color: #dcdcdc;
+  text-decoration: underline;
+  text-underline-offset: -50%;
+}
+
+.footer {
+  padding: 5px 10px;
+  border-top: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer p {
+  font-size: 10px;
+  color: #dcdcdc;
+  cursor: pointer;
+}
+/*# sourceMappingURL=test_2.css.map */

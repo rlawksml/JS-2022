@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.container {
+  border: 1px solid black;
+  background-color: #d1dfee;
+}
+
+.content-wrap {
+  margin: 30px;
+}
+
+.whole-menu-title-ct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+}
+
+.whole-menu-title-ct__emoji, .whole-menu-title-ct__txt {
+  font-size: 50px;
+  margin: 0 2.5px;
+}
+
+.menu-select-ct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+.menu-select-ct__item {
+  width: 160px;
+  padding: 5px 30px;
+  margin: 0 5px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 1px;
+  margin-bottom: 5px;
+}
+
+.menu-managing-ct {
+  background-color: #fff;
+  padding: 30px 30px;
+}
+
+.menu-managing-ct .menu-managing-titleBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-managing-ct .menu-managing-titleBox__emoji {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.menu-managing-ct .menu-managing-titleBox__menuCount {
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.menu-managing-ct .menu-mananging-inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input {
+  border: none;
+  background-color: #d1dfee;
+  border-radius: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+  width: 80%;
+  padding: 15px;
+  font-size: 20px;
+  margin-right: 10px;
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input:focus::placeholder {
+  color: transparent;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__input::placeholder {
+  color: #fff;
+}
+
+.menu-managing-ct .menu-mananging-inputBox__okBtn {
+  color: #fff;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 10%;
+          flex: 0 1 10%;
+  background-color: mediumturquoise;
+  border-radius: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.menu-managing-ct .menu-list-ct .menu-list {
+  width: 100%;
+}
+
+.menu-managing-ct .menu-list-ct .menu-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.menu-managing-ct .menu-list-ct .menu-list__item__name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 70%;
+          flex: 1 1 70%;
+  padding: 10px 5px;
+}
+
+.menu-managing-ct .menu-list-ct .menu-list__item__okBtn {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.menu-managing-ct .menu-list-ct .menu-list__item button {
+  background-color: #e6e6e6;
+  border-radius: 50px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 5%;
+          flex: 0 1 5%;
+  padding: 10px 5px;
+}
+/*# sourceMappingURL=test_3.css.map */

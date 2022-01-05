@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/test.css" />
+    <script src="./index.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.js"
+      integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title-text">TODOS</h2>
+
+      <div class="todo-list-container">
+        <div class="input-container"><input type="text" onkeyup="TextEnter(event)" /></div>
+        <ul class="todo-list active"></ul>
+        <footer class="footer">
+          <p class="count-item"><span class="count_number">0</span> item left</p>
+          <p class="all-items" onclick="allItem_click(event)">all</p>
+          <p class="only-active-items" onclick="activeItem_click(event)">active</p>
+          <p class="only-completed-items" onclick="completedItem_click(event)">completed</p>
+          <p class="clear-items" onclick="clearItem_click(event)">Clear completed</p>
+        </footer>
+      </div>
+    </div> 
+  </body>
+</html>
+
+<!-- 
+<li class="todo-list__item">
+  <div class="todo-list__item item-wraper">
+    <input class="todo-list__item__chk" type="checkbox" onclick="item_checked(event)" />
+    <p class="todo-list__item__text">ㅁㄴㅇ</p>
+    <input />
+    <button class="todo-list__item__btn-x" onclick="del_btn(event)">X</button>
+  </div>
+</li> -->

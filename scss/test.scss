@@ -1,0 +1,134 @@
+$fs: 16px;
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+}
+body {
+  font-size: $fs;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title-text {
+  flex: 1 0 100%;
+  text-align: center;
+  margin: 0;
+  color: #dcdcdc;
+  font-size: 40px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+.todo-list-container {
+  border: 1px solid #dcdcdc;
+  width: 50%;
+
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+  text-align: center;
+  .input-container {
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding-left: 20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      &::placeholder {
+        color: #dcdcdc;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.todo-list.active {
+  display: block;
+}
+
+.todo-list {
+  display: none;
+  padding: 0;
+  &__item {
+    display: flex;
+
+    width: 100%;
+    &__chk {
+      flex: 0 0 3%;
+      height: 100%;
+    }
+    &__text {
+      flex: 0 0 94%;
+      width: 80%;
+      height: 100%;
+      text-align: left;
+      padding-left: 10px;
+      word-wrap: break-word;
+    }
+
+    &__text--input {
+      display: none;
+    }
+
+    &__btn-x {
+      flex: 0 0 3%;
+      background-color: #fff;
+      border: none;
+      color: #dcdcdc;
+      cursor: pointer;
+    }
+    &.item-wraper {
+      padding: 5px 10px;
+    }
+  }
+  &__item.editing {
+    .todo-list__item__text {
+      display: none;
+    }
+    .todo-list__item__text--input.active {
+      display: flex;
+      flex: 0 1 90%;
+      margin: 0 4%;
+    }
+  }
+}
+
+.todo-list__item.completed {
+  .todo-list__item__text {
+    color: #dcdcdc;
+    text-decoration: underline;
+    text-underline-offset: -50%;
+  }
+}
+
+.footer {
+  padding: 5px 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  p {
+    font-size: 10px;
+    color: #dcdcdc;
+    cursor: pointer;
+  }
+}
