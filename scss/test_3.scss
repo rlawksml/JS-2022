@@ -16,17 +16,15 @@ li {
   margin: 0;
 }
 
-body,
-html {
+html,
+body {
   padding: 0;
   margin: 0;
-  // width: 100%;
-  height: 100%;
 }
 
 .container {
   background-color: rgb(209, 223, 238);
-  height: 100%;
+  border: 1px solid transparent;
 }
 
 .content-wrap {
@@ -35,7 +33,6 @@ html {
 }
 
 .whole-menu-title-ct {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +43,6 @@ html {
     font-size: 50px;
     margin: 0 2.5px;
   }
-
 }
 
 .menu-select-ct {
@@ -80,7 +76,8 @@ html {
       margin-right: 10px;
     }
 
-    &__txt {}
+    &__txt {
+    }
 
     &__menuCount {
       font-weight: bold;

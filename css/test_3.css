@@ -17,16 +17,15 @@ li {
   margin: 0;
 }
 
-body,
-html {
+html,
+body {
   padding: 0;
   margin: 0;
-  height: 100%;
 }
 
 .container {
   background-color: #d1dfee;
-  height: 100%;
+  border: 1px solid transparent;
 }
 
 .content-wrap {
