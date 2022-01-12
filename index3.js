@@ -61,3 +61,16 @@ document.querySelector('#input-btn').addEventListener('click', (e) => {
   }
   CountingItems();
 });
+
+// test
+
+var word_length = document.querySelector('.test-text').innerText.length;
+
+if (word_length >= 50) {
+  document.querySelector('.test-text').style.height = 70 + 'px';
+}
+
+function click_moreView(e) {
+  e.closest('p').style.height = 'auto';
+  e.closest('p').style.backgroundColor = 'none';
+}
