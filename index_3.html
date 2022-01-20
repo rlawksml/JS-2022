@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -40,6 +42,18 @@
     품절 상태 메뉴의 마크업
   -->
 
+
+  <!--
+      링크에 있는 웹 서버 저장소를 clone하여 로컬에서 웹 서버를 실행시킨다.
+
+      웹 서버를 띄워서 실제 서버에 데이터의 변경을 저장하는 형태로 리팩터링한다.
+      - localStorage에 저장하는 로직은 지운다.
+      - fetch 비동기 api를 사용하는 부분을 async await을 사용하여 구현한다.
+      - API 통신이 실패하는 경우에 대해 사용자가 알 수 있게 alert으로 예외처리를 진행한다.
+
+      중복되는 메뉴는 추가할 수 없다.
+  -->
+
     <div class="container">
       <div class="content-wrap">
         <div class="whole-menu-title-ct">
@@ -48,19 +62,19 @@
         </div>
 
         <div class="menu-select-ct">
-          <button id="espresso-menu-btn" class="menu-select-ct__item">&#127771; Espresso</button>
-          <button id="frappuccino-menu-btn" class="menu-select-ct__item">
+          <button onclick="select_menu(this)" data-name="espresso" id="espresso-menu-btn" class="menu-select-ct__item active">&#127771; Espresso</button>
+          <button onclick="select_menu(this)" data-name="frappuccino" id="frappuccino-menu-btn" class="menu-select-ct__item">
             &#127772; Frappuccino
           </button>
-          <button id="blended-menu-btn" class="menu-select-ct__item">&#127773; Blended</button>
-          <button id="teavana-menu-btn" class="menu-select-ct__item">&#127774; Teavana</button>
-          <button id="dessert-menu-btn" class="menu-select-ct__item">&#127775; Dessert</button>
+          <button onclick="select_menu(this)" data-name="blended" id="blended-menu-btn" class="menu-select-ct__item">&#127773; Blended</button>
+          <button onclick="select_menu(this)" data-name="teavana" id="teavana-menu-btn" class="menu-select-ct__item">&#127774; Teavana</button>
+          <button onclick="select_menu(this)" data-name="dessert" id="dessert-menu-btn" class="menu-select-ct__item">&#127775; Dessert</button>
         </div>
 
         <div class="menu-managing-ct">
           <div class="menu-managing-titleBox">
             <p class="menu-managing-titleBox__emoji">&#128181;</p>
-            <h2 class="menu-managing-titleBox__txt">Espresso Management</h2>
+            <h2 id="current_menu_title"class="menu-managing-titleBox__txt">espresso Management</h2>
             <span id="menu-count" class="menu-managing-titleBox__menuCount">총 0개</span>
           </div>
 
@@ -77,11 +91,7 @@
           <!-- 에스프레소, 프라푸치노, 블렌디드, 티바나, 디저트  -->
 
           <div class="menu-list-ct">
-            <ul id="espresso-menu-list" class="menu-list"></ul>
-            <ul id="Frappuccino-menu-list" class="menu-list"></ul>
-            <ul id="Blended-menu-list" class="menu-list"></ul>
-            <ul id="Teavana-menu-list" class="menu-list"></ul>
-            <ul id="Dessert-menu-list" class="menu-list"></ul>
+            <ul id="menu-list" class="menu-list"></ul>
           </div>
         </div>
       </div>
