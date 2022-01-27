@@ -29,7 +29,7 @@ function App() {
 
   const render = () => {
     const template = this.menu[this.current_menu].map((item, index) => {
-      return `<li data-menu-id="${index}" class="menu-list__item">
+      return `<li data-menu-id="${index}" class="menu-list__item ${item.soldout ? "sold-out": ""}">
     <span class="menu-list__item__name">${item.name}</span>
     <button type="button" class="menu-list__item__okBtn sold-out">
     품절</button>
@@ -63,10 +63,10 @@ function App() {
       }
     }
     render();
-
   }
 
   const DeleteItem = (e) => {
+
     if (confirm('메뉴를 삭제하시겠습니까?')) {
       e.target.closest('li').remove();
       const index_n = (e.target.closest('li').dataset.menuId)
@@ -74,74 +74,75 @@ function App() {
       store.save_localdata(this.menu)
       render();
     }
-
-    const SoldoutItem = (e) => {
-      const is_soldout = e.target.closest('li').classList.contains('sold-out')
-      if (is_soldout) {
-        e.target.closest('li').classList.remove('sold-out');
-      } else {
-        e.target.closest('li').classList.add('sold-out');
-      }
-      store.save_localdata(this.menu)
-      render();
-    }
-
-    const AddItem = () => {
-      const input_value = document.querySelector('#newMenu-input').value;
-
-      this.menu[this.current_menu].push({
-        name: input_value
-      })
-      // 로컬데이터 저장하기
-      store.save_localdata(this.menu)
-      render()
-      $('#newMenu-input').value = '';
-    }
-
-
-    const initEventListners = () => {
-      $('.menu-list').addEventListener('click', (e) => {
-        if (e.target.classList.contains('sold-out')) {
-          console.log('품절')
-          SoldoutItem(e)
-        } else if (e.target.classList.contains('modify')) {
-          console.log('수정')
-          ModifyItem(e)
-        } else if (e.target.classList.contains('delete')) {
-          console.log('삭제')
-          DeleteItem(e)
-        }
-      })
-
-      document.getElementById('newMenu-input').addEventListener('keyup', (e) => {
-        if (e.keyCode === 13 && e.target.value != '') {
-          AddItem();
-        }
-        CountingItems();
-      });
-
-      document.querySelector('#input-btn').addEventListener('click', (e) => {
-        if (document.getElementById('newMenu-input').value != '') {
-          AddItem();
-        }
-        CountingItems();
-      });
-
-      document.querySelector('.menu-select-ct').addEventListener('click', (e) => {
-        if (e.target.classList.contains('menu-select-ct__item'))
-          this.current_menu = e.target.dataset.name
-
-        document.getElementById('current_menu_title').innerText = this.current_menu + " Management"
-
-        // 새로운 메뉴를 보여주기 render
-        render()
-        CountingItems();
-      })
-    }
-
   }
 
-  const app = new App();
-  app.init();
+  const SoldoutItem = (e) => {
+    // const is_soldout = e.target.closest('li').classList.contains('sold-out')
+    // if (is_soldout) {
+    //   e.target.closest('li').classList.remove('sold-out');
+    // } else {
+    //   e.target.closest('li').classList.add('sold-out');
+    // }
+    const idx = e.target.closest('li').dataset.menuId
+    this.menu[this.current_menu][idx].soldout = !this.menu[this.current_menu][idx].soldout
 
-  // const menuTemplate = (menuname) => `${menuname}`
+    store.save_localdata(this.menu)
+    render();
+  }
+
+  const AddItem = () => {
+    const input_value = document.querySelector('#newMenu-input').value;
+
+    this.menu[this.current_menu].push({
+      name: input_value
+    })
+    // 로컬데이터 저장하기
+    store.save_localdata(this.menu)
+    render()
+    $('#newMenu-input').value = '';
+  }
+
+
+  const initEventListners = () => {
+    $('.menu-list').addEventListener('click', (e) => {
+      if (e.target.classList.contains('sold-out')) {
+        console.log('품절')
+        SoldoutItem(e)
+      } else if (e.target.classList.contains('modify')) {
+        console.log('수정')
+        ModifyItem(e)
+      } else if (e.target.classList.contains('delete')) {
+        console.log('삭제')
+        DeleteItem(e)
+      }
+    })
+
+    document.getElementById('newMenu-input').addEventListener('keyup', (e) => {
+      if (e.keyCode === 13 && e.target.value != '') {
+        AddItem();
+      }
+      CountingItems();
+    });
+
+    document.querySelector('#input-btn').addEventListener('click', (e) => {
+      if (document.getElementById('newMenu-input').value != '') {
+        AddItem();
+      }
+      CountingItems();
+    });
+
+    document.querySelector('.menu-select-ct').addEventListener('click', (e) => {
+      if (e.target.classList.contains('menu-select-ct__item'))
+        this.current_menu = e.target.dataset.name
+
+      document.getElementById('current_menu_title').innerText = this.current_menu + " Management"
+
+      // 새로운 메뉴를 보여주기 render
+      render()
+      CountingItems();
+    })
+  }
+}
+
+const app = new App();
+app.init();
